@@ -1,5 +1,8 @@
-<ion-tabs>
+<!-- tabs是父组件，tab1、tab2、tab3是子组件，在angular中父子嵌套路由需要添加路由占位符，Ionic进一步封装，这个占位符可有可无 -->
+<router-outlet></router-outlet>
 
+<ion-tabs>
+  <!-- 底部tab栏 -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="tab1">
       <ion-icon name="triangle"></ion-icon>
