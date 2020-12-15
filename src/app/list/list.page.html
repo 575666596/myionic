@@ -1,0 +1,163 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/tabs/tab1'></ion-back-button>
+    </ion-buttons>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- 1、普通列表 -->
+  <!-- 属性 -->
+  <!-- 1.inset 类型boolean 默认false 如果为true，则列表周围将有边距和圆角。 -->
+  <!-- 2.lines "full" | "inset" | "none" | undefined 下边框应如何显示在所有项目上。 -->
+  <ion-list inset='true'>
+    <ion-item>
+      <ion-label>item1</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>item2</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- 列表循环，加上routerLink就加上右边三角而且有鼠标经过的效果，点击当前项就可以跳转，不仅仅是点击三角 -->
+  <ion-list lines="full">
+    <ion-item *ngFor="let item of arr" [routerLink]="[ '/button']">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- 2、分组列表ion-item-divider -->
+  <ion-list>
+    <ion-item-divider>
+      <ion-label>A</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>A1</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>A2</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>A3</ion-label>
+    </ion-item>
+    <ion-item-divider>
+      <ion-label>B</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>B1</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>B2</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>B3</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- 3、列表中带图标 -->
+  <ion-list lines='full'>
+    <ion-item>
+      <ion-icon slot="start" name="people"></ion-icon>
+      <ion-label>个人中心</ion-label>
+      <!-- 不能和[routerLink]="[ '/button']一起使用，有bug -->
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-item>
+    <ion-item [routerLink]="[ '/button']">
+      <ion-icon slot="start" name="wallet" color="success"></ion-icon>
+      <ion-label>钱包</ion-label>
+      <!-- <ion-icon slot="end" name="arrow-forward"></ion-icon> -->
+    </ion-item>
+  </ion-list>
+  <!-- 4、列表中的头像ion-avatar -->
+  <ion-list>
+    <ion-item [routerLink]="[ '/button']">
+      <ion-avatar slot="start">
+        <img src="../../assets/icon.png">
+      </ion-avatar>
+      <ion-label>item1</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="[ '/button']">
+      <ion-avatar slot="start">
+        <img src="../../assets/reset.png">
+      </ion-avatar>
+      <ion-label>item2</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="[ '/button']">
+      <ion-avatar slot="end">
+        <img src="../../assets/icon.png">
+      </ion-avatar>
+      <ion-label>item3</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="[ '/button']">
+      <ion-avatar slot="end">
+        <img src="../../assets/reset.png">
+      </ion-avatar>
+      <ion-label>item4</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- 5、列表中的图片ion-thumbnail -->
+  <ion-list>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <!-- img和ion-img效果是一样的，注意图片路径不需要../../ -->
+        <ion-img src="assets/scan2.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>扫一扫</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-thumbnail slot="start">
+        <!-- img和ion-img效果是一样的，注意图片路径不需要../../ -->
+        <ion-img src="assets/search1.png"></ion-img>
+      </ion-thumbnail>
+      <ion-label>放大镜</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- 6、滑动列表 ion-item-sliding-->
+  <ion-list>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Item1</ion-label>
+      </ion-item>
+      <!-- 右滑显示左边选项 -->
+      <ion-item-options side="start">
+        <ion-item-option>Favorite</ion-item-option>
+        <ion-item-option color="success">Share</ion-item-option>
+      </ion-item-options>
+      <!-- 左滑显示右边选项 -->
+      <ion-item-options side="end">
+        <ion-item-option color="danger">Unread</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-label>Item2</ion-label>
+      </ion-item>
+      <!-- 右滑显示左边选项 -->
+      <ion-item-options side="start">
+        <ion-item-option>Favorite</ion-item-option>
+        <ion-item-option color="success">Share</ion-item-option>
+      </ion-item-options>
+      <!-- 左滑显示右边选项 -->
+      <ion-item-options side="end">
+        <ion-item-option color="danger">Unread</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <!-- 7、ion-item的属性 -->
+  <!-- 8.ion-list-header -->
+  <!-- 列表的标题组件。与ItemDivider不同，ListHeaders的样式使其在其余列表项中脱颖而出。实测没效果 -->
+  <ion-list>
+    <ion-list-header color="light">
+      <ion-label>item-head</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>item1</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>item2</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>item3</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

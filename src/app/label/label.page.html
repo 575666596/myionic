@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <!-- 后退按钮用法 -->
+      <!-- “后退”按钮可向后导航点击后的应用历史记录 -->
+      <!-- 1.color属性，改变图标和文本颜色 -->
+      <!-- 2.defaultHref 没有历史记录时，默认情况下导航到的URL。-->
+      <!-- 3.icon，后退按钮图标 -->
+      <!-- 页面刷新返回按钮不消失，修改文本好图标， -->
+      <!-- 4.mode 该模式确定要使用的平台样式。可选值 "ios" | "md"  -->
+      <!-- 5.text  要在“后退”按钮中显示的文本。-->
+      <!-- 实测：color属性只支持ionic系统值，text和icon属性支持属性绑定 -->
+      <ion-back-button color="success" defaultHref='/tabs/tab1' [text]='back' icon="add"></ion-back-button>
+    </ion-buttons>
+    <ion-title>label</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content>
+
+<!-- 固定写法 -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Footer</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon slot="icon-only" name='add'></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

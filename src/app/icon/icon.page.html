@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>返回</ion-back-button>
+    </ion-buttons>
+    <ion-title>icon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- 可以使用脚本引入<script src = “ https://unpkg.com/ionicons@5.2.3/dist/ionicons.js” > </script> -->
+  <!-- 1.基本用法，添加name属性 -->
+  <ion-icon name="git-network-outline"></ion-icon>
+  <!-- 2.自定义图标，src属性 -->
+  <ion-icon src='../../assets/alert-circle-outline.svg' size='large' style="color: red;"></ion-icon>
+  <!-- 3.size属性 -->
+  <ion-icon name="tablet-portrait-outline" size='small'></ion-icon>
+  <ion-icon name="trash" size='large'></ion-icon>
+  <!-- 4.自定义类名，前面学习的button也可以 -->
+  <ion-icon name="scan-circle" class="large"></ion-icon>
+  <!-- 5.每个平台指定不同的图标。使用md和ios属性 -->
+  <ion-icon ios='filter-outline' md='filter-sharp'> </ion-icon>
+</ion-content>

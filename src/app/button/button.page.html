@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>返回</ion-back-button>
+    </ion-buttons>
+    <ion-title>button</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>ion-button用法（用法）</p>
+  <!-- expend属性 -->
+  <p>expend属性</p>
+  <ion-button color="primary"> 默认 </ion-button>
+  <ion-button color="primary" expand='block'>block</ion-button>
+  <ion-button color="primary" expand='full'>full</ion-button>
+  <!-- fill属性 -->
+  <p>fill属性</p>
+  <ion-button color="primary"> 默认 </ion-button>
+  <ion-button color="primary" fill='outline'>outline</ion-button>
+  <ion-button color="primary" fill='solid'>solid</ion-button>
+  <!-- fill = 'clear' 一般结合图标使用，可以去掉按钮背景色 -->
+  <ion-button color="primary" fill='clear'>
+    <ion-icon slot="icon-only" name='add'></ion-icon>
+  </ion-button>
+  <ion-button color="primary">
+    <ion-icon slot="icon-only" name='add'></ion-icon>
+  </ion-button>
+  <ion-icon name='add'></ion-icon>
+  <!-- size属性 -->
+  <p>size属性</p>
+  <ion-button color="primary" size='large'> large </ion-button>
+  <ion-button color="primary" size='samll'> small </ion-button>
+  <ion-button color="primary" size='default'> default </ion-button>
+  <!-- mode属性 -->
+  <p>mode属性</p>
+  <ion-button color="primary" mode='ios'>ios平台的按钮 </ion-button>
+  <ion-button color="primary" mode='md'> android平台的按钮 </ion-button>
+  <!-- 结合图标 -->
+  <p>结合图标使用</p>
+  <ion-button>
+    <ion-icon slot="start" name="add"></ion-icon>图标在左文字再右
+  </ion-button>
+  <ion-button>
+    <ion-icon slot="end" name="add"></ion-icon>图标在左文字再右
+  </ion-button>
+  <!-- shape属性 -->
+  <p>shape属性</p>
+  <ion-button shape="round" fill="outline">round</ion-button>
+</ion-content>
