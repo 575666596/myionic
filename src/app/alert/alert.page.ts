@@ -16,6 +16,7 @@ export class AlertPage implements OnInit {
   async presentAlert() {
     const alert = await this.alertController.create({
       message: '确定离开',
+      backdropDismiss: false, // 点击屏幕时，弹框不消失
       buttons: ['取消', '确定']
     });
 

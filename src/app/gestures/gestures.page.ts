@@ -19,5 +19,8 @@ export class GesturesPage implements OnInit {
     console.log(1);
 
   }
+  handle() {
+    console.log(11);
 
+  }
 }

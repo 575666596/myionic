@@ -16,13 +16,16 @@ import { AppRoutingModule } from './app-routing.module';
 // 根组件
 import { AppComponent } from './app.component';
 
+// 配置ionic5.x手势事件
+import { HammerModule } from '@angular/platform-browser';
+
 @NgModule({
   // 配置当前项目运行的组件
   declarations: [AppComponent],
   // 配置不会再模板中使用的组件，在3.x中用得多，这里不用
   entryComponents: [],
   // 配置当前模块运行依赖的其他模块
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HammerModule],
   // 配置项目所需要的服务
   providers: [
     StatusBar,
