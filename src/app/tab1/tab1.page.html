@@ -1,5 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="success">
+    <ion-menu-button menu='menu-content' slot="start" color="warning"> </ion-menu-button>
     <ion-title>
       Tab 1
     </ion-title>
@@ -7,14 +8,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense"> -->
+  <ion-header>
     <ion-toolbar>
       <ion-title size="large">Tab 1</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <!-- 页面跳转 -->
-  <ion-button [routerLink]="['/home']">跳转到home页面</ion-button>
+  <ion-button [routerLink]="['/home']" color="mycolor">跳转到home页面</ion-button>
   <ion-button [routerLink]="['/button']">跳转到button页面</ion-button>
   <ion-button [routerLink]="['/icon']">跳转到icon页面</ion-button>
   <ion-button [routerLink]="['/label']">跳转到label页面</ion-button>

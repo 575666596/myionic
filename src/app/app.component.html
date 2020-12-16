@@ -1,3 +1,39 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <!-- 3、底部 tabs 结合侧边栏ion-menu。侧边栏项目与普通项目的区别在app.html代码不同 -->
+  <ion-menu contentId="menu-content" menuId="menu-content" side="start" type="overlay">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>用户信息</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <!-- routerDirection="root"的作用是跳转页面的时候，侧边栏向左消失，页面不动，如果不加，则页面也跟着向左移动 -->
+          <ion-item [routerLink]="['/form']" routerDirection="root">
+            <ion-label>我的表单</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/button']" routerDirection="root">
+            <ion-label>我的按钮</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/home']">
+            <ion-label>我的首页</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item [routerLink]="['/datetime']">
+            <ion-label>我的日期</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <!-- Menu： must have a "content" to listen for drag events on，解决方法，添加main属性（视频方法）这里添加id属性匹配contentId -->
+  <ion-router-outlet id='menu-content'></ion-router-outlet>
+  <!-- 4.在需要用到的页面，头部添加侧边栏按钮ion-menu-button，比如 tab1页面 -->
 </ion-app>
