@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="medium">
     <ion-buttons slot="start">
       <ion-back-button defaultHref='/tabs/tab1' text='返回'></ion-back-button>
     </ion-buttons>
@@ -17,13 +17,13 @@
     </ion-item>
     <!-- 2.双向数据绑定 -->
     <ion-item>
-      <ion-label>Date</ion-label>
+      <ion-label>双向数据绑定，显示后台传入时间</ion-label>
       <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" [(ngModel)]="date">
       </ion-datetime>
     </ion-item>
-    <!-- 3.显示当前日期，监听ionChange事件 -->
+    <!-- 3.使用插件显示当前日期，监听ionChange事件 -->
     <ion-item>
-      <ion-label>Date</ion-label>
+      <ion-label>使用插件显示当前日期</ion-label>
       <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" [(ngModel)]="now"
         (ionChange)='ionChange($event)'>
       </ion-datetime>
