@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/tabs/tab1' text='返回'></ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>searchbar</ion-title> -->
+    <!-- 可以放在工具栏 -->
+    <ion-searchbar placeholder="请输入"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- 动画效果 -->
+  <ion-searchbar placeholder="请输入" animated></ion-searchbar>
+  <!-- 指定输入类型，只能输入数字 -->
+  <ion-searchbar placeholder="请输入" type='number'></ion-searchbar>
+  <!-- 去抖动效果，设置ionChange每次按键后等待触发事件的时间（以毫秒为单位） -->
+  <ion-searchbar placeholder="请输入" [debounce]='500' (ionChange)='ionChange()'></ion-searchbar>
+  <!-- 禁用 -->
+  <ion-searchbar placeholder="禁用" disabled="true"></ion-searchbar>
+  <!-- 自定义搜索图标 -->
+  <ion-searchbar placeholder="请输入" searchIcon='add'></ion-searchbar>
+  <!-- 如果为true，则显示取消按钮 -->
+  <ion-searchbar placeholder="请输入" showCancelButton='true'></ion-searchbar>
+  <!-- ion-searchbar事件 -->
+  <ion-searchbar placeholder="请输入" [debounce]='500' (ionCancel)='ionCancel()' showCancelButton='true'></ion-searchbar>
+  <ion-searchbar placeholder="请输入" [debounce]='500' (ionInput)='ionInput()'></ion-searchbar>
+
+</ion-content>

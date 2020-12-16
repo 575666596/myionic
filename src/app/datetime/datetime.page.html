@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/tabs/tab1' text='返回'></ion-back-button>
+    </ion-buttons>
+    <ion-title>datetime</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <!-- 1.基本使用 -->
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <!-- 一个是选择格式一个是显示格式 -->
+      <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" placeholder='请选择日期'></ion-datetime>
+    </ion-item>
+    <!-- 2.双向数据绑定 -->
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" [(ngModel)]="date">
+      </ion-datetime>
+    </ion-item>
+    <!-- 3.显示当前日期，监听ionChange事件 -->
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" [(ngModel)]="now"
+        (ionChange)='ionChange($event)'>
+      </ion-datetime>
+    </ion-item>
+    <!-- 4.修改取消和确认按钮 pickerOptions -->
+    <ion-item>
+      <ion-label>汉化日期按钮</ion-label>
+      <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" [pickerOptions]="customPickerOptions"
+        placeholder='请选择日期'>
+      </ion-datetime>
+    </ion-item>
+    <!-- 5.最大日期和最小日期。默认情况下，最大日期是到本年末，最小日期是从100年前的年初开始。 -->
+    <!-- 6.默认选择事件，添加value属性，此时placeholder失效 -->
+    <ion-item>
+      <ion-label>最大和最小日期</ion-label>
+      <ion-datetime pick-format='YYYY MM DD' display-format="YYYY-MM-DD" min="2016" max="2021-06-31" value="1996-12-15">
+      </ion-datetime>
+    </ion-item>
+  </ion-list>
+</ion-content>

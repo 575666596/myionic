@@ -29,6 +29,22 @@ const routes: Routes = [
   {
     path: 'form',
     loadChildren: () => import('./form/form.module').then( m => m.FormPageModule)
+  },
+  {
+    path: 'slides',
+    loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  {
+    path: 'searchbar',
+    loadChildren: () => import('./searchbar/searchbar.module').then( m => m.SearchbarPageModule)
+  },
+  {
+    path: 'segment-tab',
+    loadChildren: () => import('./segment-tab/segment-tab.module').then( m => m.SegmentTabPageModule)
+  },
+  {
+    path: 'datetime',
+    loadChildren: () => import('./datetime/datetime.module').then( m => m.DatetimePageModule)
   }
 ];
 @NgModule({

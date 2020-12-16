@@ -1,17 +1,78 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
+      <ion-back-button defaultHref='/tabs/tab1'></ion-back-button>
     </ion-buttons>
-    <ion-title>form</ion-title>
+    <ion-title>form表单</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <!-- 1、ion-input单行文本框 -->
-  <!-- 2、ion-toggle开关 -->
-  <!-- 3、ion-radio单选按钮组 -->
-  <!-- 4、ion-checkbox多选按钮组 -->
-  <!-- 5.ion-select选择框 -->
-  <!-- 6、ion-textarea多行文本框 -->
+  <ion-list>
+    <!-- 1、ion-input单行文本框-->
+    <ion-item-divider>
+      <ion-label>用户基本信息</ion-label>
+    </ion-item-divider>
+    <ion-item>
+      <ion-label>用户名：</ion-label>
+      <ion-input type="text" placeholder="请输入姓名" [(ngModel)]='peopleInfo.username'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>年 龄：</ion-label>
+      <ion-input type="text" placeholder="请输入年龄" [(ngModel)]='peopleInfo.age'></ion-input>
+    </ion-item>
+    <!-- 2、ion-toggle开关 -->
+    <ion-item>
+      <ion-label>是否毕业</ion-label>
+      <ion-toggle slot="end" [(ngModel)]='peopleInfo.flag'></ion-toggle>
+    </ion-item>
+    <!-- 3、ion-radio-group、ion-radio单选按钮组 -->
+    <!-- [(ngModel)]绑定值与子项value值匹配 -->
+    <ion-radio-group [(ngModel)]='peopleInfo.payType'>
+      <ion-item-divider>
+        <ion-label>支付方式</ion-label>
+      </ion-item-divider>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/icon.png" />
+        </ion-avatar>
+        <ion-label>支付宝支付</ion-label>
+        <ion-radio value="1" slot="end"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/reset.png" />
+        </ion-avatar>
+        <ion-label>微信支付</ion-label>
+        <ion-radio value="2" slot="end"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <!-- 4、ion-checkbox多选按钮组 -->
+    <ion-item-divider>
+      <ion-label>爱好</ion-label>
+    </ion-item-divider>
+    <ion-item *ngFor="let item of peopleInfo.checkBoxLis">
+      <!-- 根据布尔值决定知否选中 -->
+      <ion-checkbox slot="start" [(ngModel)]="item.ischecked"></ion-checkbox>
+      <ion-label>{{item.val}}</ion-label>
+    </ion-item>
+    <!-- 5.ion-select选择框 -->
+    <ion-item>
+      <ion-label>选择城市</ion-label>
+      <!-- ngModel绑定值与value绑定值匹配 -->
+      <ion-select [(ngModel)]="peopleInfo.city" multiple="true" placeholder="请选择">
+        <ion-select-option *ngFor="let item of peopleInfo.citylist" [value]="item">{{item}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <!-- 6、ion-textarea多行文本框 -->
+    <ion-item>
+      <ion-textarea [(ngModel)]="peopleInfo.info" placeholder="请输入备注信息"></ion-textarea>
+    </ion-item>
+    <ion-button (click)="onClick()" expand="block" shape="round">
+      提交
+    </ion-button>
+  </ion-list>
+
+
+  <div>{{peopleInfo | json}}</div>
 </ion-content>

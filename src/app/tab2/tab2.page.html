@@ -1,17 +1,32 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <!-- ion-segment 在 toolbar 中使用 -->
+    <ion-segment value="pizza" (ionChange)="segmentChanged($event)" [(ngModel)]="tab">
+      <ion-segment-button value="tab1">
+        <ion-label>简介</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tab2">
+        <ion-label>详情</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="tab3">
+        <ion-label>评论</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
+  <div [ngSwitch]="tab">
+    <div *ngSwitchCase="'tab1'">
+      商品简介
+    </div>
+    <div *ngSwitchCase="'tab2'">
+      商品详情
+    </div>
+    <div *ngSwitchCase="'tab3'">
+      商品评论
+    </div>
+  </div>
+  <p>{{tab}}</p>
   <app-explore-container name="Tab 2 page"></app-explore-container>
 </ion-content>
