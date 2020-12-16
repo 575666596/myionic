@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/tabs/tab3' text='返回'></ion-back-button>
+    </ion-buttons>
+    <ion-title>loading</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="presentLoading()" expand="block" shape="round">
+    弹出loading
+  </ion-button>
+  <ion-button (click)="presentLoadingWithOptions()" expand="block" shape="round">
+    loading
+  </ion-button>
+</ion-content>

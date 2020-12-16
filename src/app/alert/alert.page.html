@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/tabs/tab3' text='返回'></ion-back-button>
+    </ion-buttons>
+    <ion-title>alert</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="presentAlert()" expand="block" shape="round">
+    alert1
+  </ion-button>
+  <ion-button (click)="presentAlertMultipleButtons()" expand="block" shape="round">
+    alert2
+  </ion-button>
+  <ion-button (click)="presentAlertConfirm()" expand="block" shape="round">
+    alert3
+  </ion-button>
+  <ion-button (click)="presentAlertPrompt()" expand="block" shape="round">
+    alert4
+  </ion-button>
+</ion-content>

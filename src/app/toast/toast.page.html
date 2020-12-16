@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref='/tabs/tab3' text='返回'></ion-back-button>
+    </ion-buttons>
+    <ion-title>toast</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="presentToast()" expand="block" shape="round">
+    弹出toast1
+  </ion-button>
+  <ion-button (click)="presentToastWithOptions()" expand="block" shape="round">
+    弹出toast2
+  </ion-button>
+</ion-content>

@@ -45,6 +45,26 @@ const routes: Routes = [
   {
     path: 'datetime',
     loadChildren: () => import('./datetime/datetime.module').then( m => m.DatetimePageModule)
+  },
+  {
+    path: 'actionsheet',
+    loadChildren: () => import('./actionsheet/actionsheet.module').then( m => m.ActionsheetPageModule)
+  },
+  {
+    path: 'toast',
+    loadChildren: () => import('./toast/toast.module').then( m => m.ToastPageModule)
+  },
+  {
+    path: 'loading',
+    loadChildren: () => import('./loading/loading.module').then( m => m.LoadingPageModule)
+  },
+  {
+    path: 'alert',
+    loadChildren: () => import('./alert/alert.module').then( m => m.AlertPageModule)
+  },
+  {
+    path: 'gestures',
+    loadChildren: () => import('./gestures/gestures.module').then( m => m.GesturesPageModule)
   }
 ];
 @NgModule({
