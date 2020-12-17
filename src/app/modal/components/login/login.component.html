@@ -1,0 +1,30 @@
+<!-- <p>
+  work in login!
+</p> -->
+<!-- 创建组件时，模板内容少，可以自行复制ionic模板过来 -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>用户登录</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="doClose()" fill='clear'>
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>用户名：</ion-label>
+      <ion-input type="text" placeholder="请输入用户名"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>密 码：</ion-label>
+      <ion-input type="text" placeholder="请输入密码"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="onLogin()" expand="block" fill="outline" shape="round">
+    登录
+  </ion-button>
+</ion-content>

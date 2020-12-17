@@ -65,6 +65,10 @@ const routes: Routes = [
   {
     path: 'gestures',
     loadChildren: () => import('./gestures/gestures.module').then( m => m.GesturesPageModule)
+  },
+  {
+    path: 'modal',
+    loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
   }
 ];
 @NgModule({

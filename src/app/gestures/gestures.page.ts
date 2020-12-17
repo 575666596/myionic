@@ -13,14 +13,9 @@ export class GesturesPage implements OnInit {
   }
   doTap() {
     console.log(0);
-
   }
   doPress() {
     console.log(1);
-
   }
-  handle() {
-    console.log(11);
 
-  }
 }

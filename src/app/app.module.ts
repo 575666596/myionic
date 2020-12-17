@@ -22,7 +22,7 @@ import { HammerModule } from '@angular/platform-browser';
 @NgModule({
   // 配置当前项目运行的组件
   declarations: [AppComponent],
-  // 配置不会再模板中使用的组件，在3.x中用得多，这里不用
+  // 配置不会在模板中使用的组件，在3.x中用得多，这里不用
   entryComponents: [],
   // 配置当前模块运行依赖的其他模块
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HammerModule],
