@@ -73,6 +73,10 @@ const routes: Routes = [
   {
     path: 'scroll',
     loadChildren: () => import('./scroll/scroll.module').then( m => m.ScrollPageModule)
+  },
+  {
+    path: 'rxjs',
+    loadChildren: () => import('./rxjs/rxjs.module').then( m => m.RxjsPageModule)
   }
 ];
 @NgModule({
