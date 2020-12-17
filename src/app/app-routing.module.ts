@@ -69,6 +69,10 @@ const routes: Routes = [
   {
     path: 'modal',
     loadChildren: () => import('./modal/modal.module').then( m => m.ModalPageModule)
+  },
+  {
+    path: 'scroll',
+    loadChildren: () => import('./scroll/scroll.module').then( m => m.ScrollPageModule)
   }
 ];
 @NgModule({

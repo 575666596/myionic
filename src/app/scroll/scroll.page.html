@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text='返回' defaultHref='/tabs/tab3'></ion-back-button>
+    </ion-buttons>
+    <ion-title>scroll</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of list">
+      <ion-label>{{item}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll #myscroll threshold="25%" position="bottom" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="正在加载更多...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- ion-infinite-scroll属性 -->
+  <!-- disabled 如果为true，则无限滚动将被隐藏，滚动事件侦听器将被删除。 -->
+  <!-- position 无限滚动元素的位置。该值可以是top或bottom。默认bottom -->
+  <!-- threshold距离底部多远时触发事件，可以百分比，可以像素值 -->
+  <!-- loadingSpinner下拉分页加载图标 可选"bubbles" | "circles" | "circular" | "crescent" | "dots" | "lines" | "lines-small" | null | undefined -->
+  <!-- loadingText 加载时显示的可选文本。 -->
+  <!-- ionInfinite触发的事件 --> -->
+</ion-content>

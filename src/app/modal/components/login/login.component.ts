@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   onLogin() {
     console.log('登录');
   }
+
   doClose() {
     // 4.获取模态框对象，并调用其方法关闭模态框。模态框内置方法从官方找
     this.navParams.data.modal.dismiss(
