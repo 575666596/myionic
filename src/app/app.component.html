@@ -9,7 +9,7 @@
     <ion-content>
       <ion-list>
         <ion-menu-toggle>
-          <!-- routerDirection="root"的作用是跳转页面的时候，侧边栏向左消失，页面不动，如果不加，则页面也跟着向左移动 -->
+          <!-- routerDirection="root"的作用是跳转页面的时候，侧边栏向左消失，页面不动，如果不加，则页面也跟着向左移动 都建议加上，不然运行报错 -->
           <ion-item [routerLink]="['/form']" routerDirection="root">
             <ion-label>我的表单</ion-label>
           </ion-item>
@@ -20,12 +20,12 @@
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item [routerLink]="['/home']">
+          <ion-item [routerLink]="['/home']" routerDirection="root">
             <ion-label>我的首页</ion-label>
           </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item [routerLink]="['/datetime']">
+          <ion-item [routerLink]="['/datetime']" routerDirection="root">
             <ion-label>我的日期</ion-label>
           </ion-item>
         </ion-menu-toggle>
