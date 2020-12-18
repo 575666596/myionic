@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
   tab = 'tab1'
-
+  id = 123
   constructor() { }
   segmentChanged(e) {
     console.log(0);

@@ -81,6 +81,14 @@ const routes: Routes = [
   {
     path: 'refresher',
     loadChildren: () => import('./refresher/refresher.module').then( m => m.RefresherPageModule)
+  },
+  {
+    path: 'navcontroller',
+    loadChildren: () => import('./navcontroller/navcontroller.module').then( m => m.NavcontrollerPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({

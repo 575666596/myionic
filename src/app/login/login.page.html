@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text='返回' defaultHref='/tabs/tab2'></ion-back-button>
+    </ion-buttons>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>用户名：</ion-label>
+      <ion-input type="text" placeholder="请输入姓名"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>密 码：</ion-label>
+      <ion-input type="password" placeholder="请输入密码"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <!-- 当用户注册成功后希望直接返回到首页 NavController回到根-->
+  <ion-button expand="block" fill="clear" shape="round" (click)="goroot()">
+    注册
+  </ion-button>
+</ion-content>

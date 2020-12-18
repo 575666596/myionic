@@ -29,4 +29,32 @@
   </div>
   <p>{{tab}}</p>
   <app-explore-container name="Tab 2 page"></app-explore-container>
+
+  <!-- ionic4.x路由跳转 -->
+  <!-- 1.普通路由 -->
+  <ion-button expand="block" fill="outline" shape="round" [routerLink]="[ '/home']">
+    跳转到 home 页面
+  </ion-button>
+  <!-- 2.路由跳转传值，跟angular一样，包括get传值和动态路由传值，这里只演示get传值 -->
+  <ion-list>
+    <ion-item [routerLink]="[ '/home']" [queryParams]='{aid:id,cid:"1"}'>
+      <ion-label>新闻详情1</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="[ '/home']" [queryParams]='{aid:id,cid:"2"}'>
+      <ion-label>新闻详情2</ion-label>
+    </ion-item>
+    <ion-item [routerLink]="[ '/home']" [queryParams]='{aid:id,cid:"3"}'>
+      <ion-label>新闻详情3</ion-label>
+    </ion-item>
+  </ion-list>
+  <!-- 3.跳转页面（home）通过 ActivatedRoute 获取get传值 -->
+
+  <!-- 4.NavController返回上一页 -->
+  <!-- lonic4.x中从tabs切换页面跳转到其他页面，使用ion-back-button返回的话重默认都会返回到tab1页面。(实测现在的版本已经没有这个bug，tab2和tab3都没有bug)如果我们想从那个tab页面跳转过去就返回到指定的tab页面的话，这时候就要用到NavController里面提供的方法。 
+  新建navcontroller模块
+  -->
+  <!-- 路由跳转时加上唯一标识 [queryParams]="{return:'tab2'} -->
+  <ion-button expand="block" [routerLink]="[ '/navcontroller']" [queryParams]="{returnUrl:'tab2'}" shape="round">
+    跳转到 navcontroller 页面
+  </ion-button>
 </ion-content>

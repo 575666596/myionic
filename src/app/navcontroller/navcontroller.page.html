@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-buttons slot="start">
+      <ion-back-button text='返回' defaultHref='/tabs/tab2'></ion-back-button>
+    </ion-buttons> -->
+    <!-- 改用navcontroller控制返回上一页 -->
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+        返回
+      </ion-button>
+    </ion-buttons>
+    <ion-title>navcontroller</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button expand="block" [routerLink]="[ '/loading']" shape="round">
+    跳转到 loading 页面
+  </ion-button>
+</ion-content>
