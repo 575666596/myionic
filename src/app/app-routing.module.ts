@@ -77,6 +77,10 @@ const routes: Routes = [
   {
     path: 'rxjs',
     loadChildren: () => import('./rxjs/rxjs.module').then( m => m.RxjsPageModule)
+  },
+  {
+    path: 'refresher',
+    loadChildren: () => import('./refresher/refresher.module').then( m => m.RefresherPageModule)
   }
 ];
 @NgModule({
